@@ -1,0 +1,50 @@
+1.)Append Characters to String to Make Subsequence
+Solution:
+class Solution {
+    public int appendCharacters(String s, String t) {
+       int count=0;
+       int i=0;
+       for(int j=0;j<s.length();j++){
+          if(i<t.length()&&s.charAt(j)==t.charAt(i) ){
+            i++;
+            count++;
+          }
+       }
+       return t.length()-count;
+
+    }
+}
+2.)Length Of Last Word
+Solution:
+class Solution {
+    public int lengthOfLastWord(String s) {
+      String []r=s.split(" ");
+      int count=0;
+      String m=r[r.length-1];
+      for(int i=1;i<=m.length();i++){
+        count++;
+      }
+      return  count; 
+    }
+}
+3.)Max Consecutive Ones
+Solution:
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int count=0;
+        int max=0;
+        for(int i=0;i<nums.length;i++){
+           if(nums[i]==1){
+            count++;
+           
+           if(count>max){
+            max=count;
+           }
+           }
+           else{
+            count=0;
+           }
+        }
+        return max;
+    }
+}
